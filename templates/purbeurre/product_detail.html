@@ -1,0 +1,41 @@
+{% extends 'purbeurre/base.html' %}
+{% block title%}{{ page_title }}{% endblock %}
+
+
+{% load static %}
+
+{% block content %}
+<section class="page-section bg-dark text-white img-container" style="background-image:{% if img is none %} url({% static 'purbeurre/img/remy.png' %}) {% else %}  url({{img }}) {% endif %} " >
+   
+    <div class="text-block text-center">
+        <h4 class="text-black">{{product_name}}</h4>
+        
+      </div>
+ 
+</section>
+
+
+
+<section class="page-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 my-4 text-center">
+                <img src="https://static.openfoodfacts.org/images/misc/nutriscore-{{product.nutrition_score}}.svg">
+            </div>
+            <div class="col-lg-6 mb-4">
+                
+                <h5>Repères nutritionelles pour 100g:</h5><br>
+                
+                <img src="https://static.openfoodfacts.org/images/misc/low.svg" width="30" height="30" style="vertical-align:middle;margin-right:15px;margin-bottom:4px;" alt="Nutri-score"> <b>&nbsp; {{product.fat }}&nbsp;g Matières grasses / Lipides</b><br>
+                <img src="https://static.openfoodfacts.org/images/misc/low.svg" width="30" height="30" style="vertical-align:middle;margin-right:15px;margin-bottom:4px;" alt="Nutri-score"> <b>&nbsp; {{product.saturated_fat }}&nbsp;g Acides gras saturés</b><br>
+                <img src="https://static.openfoodfacts.org/images/misc/high.svg" width="30" height="30" style="vertical-align:middle;margin-right:15px;margin-bottom:4px;" alt="Nutri-score"> <b>&nbsp; {{product.sugar }}&nbsp;g Sucres</b> <br>
+                <img src="https://static.openfoodfacts.org/images/misc/low.svg" width="30" height="30" style="vertical-align:middle;margin-right:15px;margin-bottom:4px;" alt="Nutri-score"> <b>&nbsp; {{product.salt }}&nbsp;g Sel</b>
+            </div>
+            <div class="container my-4 text-center">
+                <a href="{{ product.url }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Plus d'infos sur OpenFoodFacts</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

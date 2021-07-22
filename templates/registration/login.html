@@ -1,0 +1,49 @@
+{% extends 'purbeurre/base.html'%}
+{% block title%}{{ page_title }}{% endblock %}
+
+{% block content %}
+
+<!-- {% include 'purbeurre/header.html' with title=title img=img %}  -->
+
+<section style="background-image: url('{{img}}');" class="page-section bg-dark text-white">
+    <div class="col-lg-10 mx-auto text-center">
+      <!-- <h3 class="section-heading text-white">{{ title }}</h3> -->
+  </section>
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }}">
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+
+
+<section class="page-section bg-dark text-white">
+    <div class="container">
+        <div class="row main">
+            <div class="main-center col-sm-12">
+                <h4 class="text-center mb-5"> Se Connecter </h4>
+                <form method="post" class="col-sm-offset-2 col-sm-10">
+                    {% csrf_token %}
+                    {{form.as_p}}
+
+                  <div class="text-center mt-4">
+                    <div class="form-group d-inline">
+                       <button type="submit" class="btn btn-primary"> Se connecter </button> 
+                    </div>
+                </form>      
+            </div>
+            </div>
+        </div>
+        
+    
+        <div class="container text-center">
+            <br>
+            <p>Pas encore enregistré (e) ?
+            <a href="{% url 'users:sign_up' %}"><u>Inscrivez-vous</u></a> en deux clicks !</p>
+        </div>
+    </div>
+</section> 
+
+{% endblock content %}

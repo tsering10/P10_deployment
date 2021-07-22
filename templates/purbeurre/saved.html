@@ -1,0 +1,105 @@
+{% extends 'purbeurre/base.html' %}
+
+{% block title%}{{ page_title }}{% endblock %}
+{% load static %}
+{% block content %}
+
+{% include 'purbeurre/header.html' with title=title  %}
+
+{% if products_saved|length_is:"0" %}
+<section class="page-section bg-dark text-white">
+    <div class="container text-center">
+    <h2>Vous n'avez pas encore de produits sauvegardés</h2><br>
+    <p>Cherchez un produit plus sain sur notre site web et sauvegardez-le dans votre espace personnel pour le retrouver plus facilement la prochaine fois !.</p>
+    </div>
+</section>
+
+{% else %}
+
+<section>
+     <div class="container-fluid">
+        <div class="row">
+          {% for product in products_saved %}
+          <!-- display infos about saved product -->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-xs-1 text-center border product-block">
+            
+            {% if product.replacement.nutrition_score == "a" %}
+              <div class="nutri-grade"><span class="badge nutri-a text-white">{{ product.replacement.nutrition_score.upper }}</span></div>
+            {% elif product.replacement.nutrition_score == "b" %}
+              <div class="nutri-grade"><span class="badge nutri-b text-white">{{ product.replacement.nutrition_score.upper }}</span></div>
+            {% elif product.replacement.nutrition_score == "c" %}
+              <div class="nutri-grade"><span class="badge nutri-c text-dark">{{ product.replacement.nutrition_score.upper }}</span></div>
+            {% elif product.replacement.nutrition_score == "d" %}
+              <div class="nutri-grade"><span class="badge nutri-d text-white">{{ product.replacement.nutrition_score.upper }}</span></div>
+            {% elif product.replacement.nutrition_score == "e" %}
+              <div class="nutri-grade"><span class="badge nutri-e text-white">{{ product.replacement.nutrition_score.upper }}</span></div>
+            {% endif %}
+
+            <div class="container vbottom p-3">
+                <a href="{% url 'purbeurre:product_detail' id_product=product.replacement.id_product %}">
+                    {% if product.replacement.img is none %}
+                      <img class="img-responsive" src="{% static 'purbeurre/img/logo_pur_beurre.png' %}" alt="{{ product.replacement.product_name }}">
+                    {% else %}
+                      <img class="img-responsive" src="{{ product.replacement.img }}" alt="{{ product.replacement.product_name }}">
+                    {% endif %}
+                  </a>
+                  <h4><a href="{% url 'purbeurre:product_detail' id_product=product.replacement.id_product %}">{{ product.replacement.product_name}}</a></h4>
+                  
+                  <div class="favs mt-2">
+                    <!-- pass product_id to the url, to use it in the view and push it to db -->
+                    <!-- {% if user.is_authenticated %} -->
+                    <form method="post">
+                      {% csrf_token %}         
+                      <input type="hidden" name="origin" value="{{product.origin.id_product}}"/>
+                      <input type="hidden" name="replacement" value="{{product.replacement.id_product}}"/>
+                      <button class="btn btn-danger"><i class="fa fa-minus-square" aria-hidden="true">&nbsp; Retirer des favoris</i></button>
+                    </form>
+                    <!-- {% endif %} -->
+                  </div>
+            </div>
+
+        </div>
+        {% if forloop.counter|divisibleby:3 %}<div class="clearfix"></div>{% endif %}
+        {% endfor %}
+    <!-- !!end display infos about saved product -->
+    </div>
+  </div>
+
+
+  {% if paginate %}
+  <div class="clearfix"></div>
+  <div class="container center my-4">
+      <nav aria-label="">
+          <ul class="pagination pagination-sm flex-wrap justify-content-center" style="text-overflow: ellipsis;">
+            {% if products_saved.has_previous %}
+                <li class="page-item"><a class="page-link" href="?query={{ query }}&page={{ products.previous_page_number }}" aria-label='Précédent'>&laquo;</a></li>
+            {% endif %}
+
+            {% for page in products_saved.paginator.page_range %}
+              {% if page %}
+                {% ifequal page products_saved.number %}
+                  <li class="page-item active">
+                    <span class="page-link">{{ page }}</span>
+                  </li>
+                {% else %}
+                  <li class="page-item">
+                    <a href="?query={{ query }}&page={{ page }}" class="page-link">{{ page }}</a>
+                  </li>
+                {% endifequal %}
+              {% else %}
+                <li class="page-item disabled"><span class="page-link">. . .</span></li>
+              {% endif %}
+              {% endfor %}
+              {% if products_saved.has_next %}
+                <li class="page-item"><a class="page-link" href="?query={{ query }}&page={{ products.next_page_number }}" aria-label='suivant'>&raquo;</a></li>
+            {% endif %}
+          </ul>
+      </nav>
+  </div>
+
+  {% endif %}
+
+</div>
+{% endif %}
+</section>
+{% endblock content %}

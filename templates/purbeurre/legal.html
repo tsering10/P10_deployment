@@ -1,0 +1,39 @@
+{% extends 'purbeurre/base.html'%}
+
+{% block title%}{{ page_title }}{% endblock %}
+
+{% block content %}
+
+{% include 'purbeurre/header.html' with title=title img=img %} 
+
+<section class="page-section" id="contact">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mt-0">Crédits :</h2>
+                <hr class="divider my-4" />
+                <p class="text-black mb-5"> Le site Pur Beurre est hébergé par la société <a href="http://heroku.com/contact" title="Heroku website"><u>Heroku</u></a><br>
+                    650 7th Street, San Francisco <br> 
+                    CA (tel : +33 1 (877) 563-4311) <br>
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <ul class="list-unstyled text-black">
+                <li>
+                  <a href="https://fr.openfoodfacts.org/">OpenFoodFacts</a>
+                  <p>Pour l'énorme base de données de produits</p>
+                </li>
+                <li>
+                  <a href="https://fontawesome.com/">FontAwesome</a>
+                  <p>Pour les superbes icônes du site</p>
+                </li>
+              </ul>
+        </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+
+

@@ -1,0 +1,38 @@
+{% extends 'purbeurre/base.html'%}
+{% load static %}
+
+{% block title%}{{ page_title }}{% endblock %}
+
+{% block content %}
+
+<!-- {% include 'purbeurre/header.html' with title=title img=img %}  -->
+
+<section style="background-image: url('{{img}}');" class="page-section bg-dark text-white">
+    <div class="col-lg-10 mx-auto text-center">
+      <div class="account-msg-box">
+        <h1 class="text-uppercase favorite-msg"><span class="account-msg-txt">Ahoy !</span></h1>
+        <p> Bienvenue sur votre espace personnel</p>
+      </div>
+  </section>
+
+  <section class="page-section  text-white">
+    <div class="text-center useravatar">
+        <img src="{% static 'purbeurre/img/default_user_100x100.png' %}">
+        <p class='userName'>{{user.username}} </p>
+        <br>
+        <!-- <p class='userName'>Email: {{user.email}}</p> -->
+        <button  class='emailButton'><i class="material-icons" style="font-size:36px">mail</i> <a href = "mailto: abc@example.com">{{user.email}}</a></button> 
+    </div>
+    <br>
+    <br>
+    <div class="container">
+        <div class="text-center">
+               <a class="btn btn-primary" href="{% url 'users:saved'%}" role="button">Mes aliments</a>
+               <a class="btn btn-primary" href="{% url 'users:logout'%}" role="button">Déconnexion</a>
+    </div>
+</div>
+
+</section>
+
+
+{% endblock content %}
