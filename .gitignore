@@ -22,3 +22,4 @@ tests/geckodriver
 *.pyc
 purbeurre_project/settings/production.py
 purbeurre_project/staticfiles/
+log/

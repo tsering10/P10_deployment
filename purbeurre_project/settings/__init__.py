@@ -16,19 +16,21 @@ import dj_database_url
 import warnings
 warnings.filterwarnings("ignore", message="No directory at", module="whitenoise.base" )
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = '/home/ttsering/P10_deployment/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = "=SjyH\\j^l]hwQGG'3Ig_%GyE"
 
 
 DEBUG = True
 
 
-ALLOWED_HOSTS = ["localhost","127.0.0.1"]
+ALLOWED_HOSTS = ['143.244.154.132']
 
 # Application definition
 
@@ -79,11 +81,11 @@ WSGI_APPLICATION = 'purbeurre_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),  # attention : remplacez par votre nom d'utilisateur !!
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+        'NAME': 'openfoodfacts',
+        'USER': 'ttsering',  # attention : remplacez par votre nom d'utilisateur !!
+        'PASSWORD': 'tashisonam',
+        'HOST': '',
+        'PORT': '5432',
     }
 }
 
@@ -126,6 +128,7 @@ AUTH_USER_MODEL = "users.User"
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 STATIC_URL = '/static/'
 

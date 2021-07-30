@@ -1,0 +1,106 @@
+[2021-07-25 19:26:14 +0000] [163943] [INFO] Starting gunicorn 20.1.0
+[2021-07-25 19:26:14 +0000] [163943] [INFO] Listening at: http://127.0.0.1:8000 (163943)
+[2021-07-25 19:26:14 +0000] [163943] [INFO] Using worker: sync
+[2021-07-25 19:26:14 +0000] [163945] [INFO] Booting worker with pid: 163945
+[2021-07-30 08:25:36 +0000] [163943] [INFO] Handling signal: term
+[2021-07-30 10:25:36 +0200] [163945] [INFO] Worker exiting (pid: 163945)
+[2021-07-30 08:25:36 +0000] [163943] [WARNING] Worker with pid 163945 was terminated due to signal 15
+[2021-07-30 08:25:36 +0000] [163943] [INFO] Shutting down: Master
+[2021-07-30 08:25:38 +0000] [200915] [INFO] Starting gunicorn 20.1.0
+[2021-07-30 08:25:38 +0000] [200915] [INFO] Listening at: http://127.0.0.1:8000 (200915)
+[2021-07-30 08:25:38 +0000] [200915] [INFO] Using worker: sync
+[2021-07-30 08:25:38 +0000] [200917] [INFO] Booting worker with pid: 200917
+[2021-07-30 08:27:04 +0000] [200942] [INFO] Starting gunicorn 20.1.0
+[2021-07-30 08:27:04 +0000] [200942] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2021-07-30 08:27:04 +0000] [200942] [ERROR] Retrying in 1 second.
+[2021-07-30 08:27:05 +0000] [200942] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2021-07-30 08:27:05 +0000] [200942] [ERROR] Retrying in 1 second.
+[2021-07-30 08:27:06 +0000] [200942] [INFO] Listening at: http://127.0.0.1:8000 (200942)
+[2021-07-30 08:27:06 +0000] [200942] [INFO] Using worker: sync
+[2021-07-30 08:27:06 +0000] [200944] [INFO] Booting worker with pid: 200944
+[2021-07-30 08:27:38 +0000] [200950] [INFO] Starting gunicorn 20.1.0
+[2021-07-30 08:27:38 +0000] [200950] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2021-07-30 08:27:38 +0000] [200950] [ERROR] Retrying in 1 second.
+[2021-07-30 08:27:39 +0000] [200950] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2021-07-30 08:27:39 +0000] [200950] [ERROR] Retrying in 1 second.
+[2021-07-30 08:27:40 +0000] [200950] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2021-07-30 08:27:40 +0000] [200950] [ERROR] Retrying in 1 second.
+[2021-07-30 08:27:41 +0000] [200950] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2021-07-30 08:27:41 +0000] [200950] [ERROR] Retrying in 1 second.
+[2021-07-30 08:27:42 +0000] [200950] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2021-07-30 08:27:42 +0000] [200950] [ERROR] Retrying in 1 second.
+[2021-07-30 08:27:43 +0000] [200950] [ERROR] Can't connect to ('127.0.0.1', 8000)
+[2021-07-30 08:27:46 +0000] [200953] [INFO] Starting gunicorn 20.1.0
+[2021-07-30 08:27:46 +0000] [200953] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2021-07-30 08:27:46 +0000] [200953] [ERROR] Retrying in 1 second.
+[2021-07-30 08:27:47 +0000] [200953] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2021-07-30 08:27:47 +0000] [200953] [ERROR] Retrying in 1 second.
+[2021-07-30 08:27:48 +0000] [200953] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2021-07-30 08:27:48 +0000] [200953] [ERROR] Retrying in 1 second.
+[2021-07-30 08:27:49 +0000] [200953] [INFO] Listening at: http://127.0.0.1:8000 (200953)
+[2021-07-30 08:27:49 +0000] [200953] [INFO] Using worker: sync
+[2021-07-30 08:27:49 +0000] [200955] [INFO] Booting worker with pid: 200955
+[2021-07-30 08:36:20 +0000] [200953] [INFO] Handling signal: term
+[2021-07-30 10:36:20 +0200] [200955] [INFO] Worker exiting (pid: 200955)
+[2021-07-30 08:36:20 +0000] [200953] [INFO] Shutting down: Master
+[2021-07-30 08:36:23 +0000] [201009] [INFO] Starting gunicorn 20.1.0
+[2021-07-30 08:36:23 +0000] [201009] [INFO] Listening at: http://127.0.0.1:8000 (201009)
+[2021-07-30 08:36:23 +0000] [201009] [INFO] Using worker: sync
+[2021-07-30 08:36:23 +0000] [201011] [INFO] Booting worker with pid: 201011
+[2021-07-30 08:46:43 +0000] [201009] [INFO] Handling signal: term
+[2021-07-30 10:46:43 +0200] [201011] [INFO] Worker exiting (pid: 201011)
+[2021-07-30 08:46:43 +0000] [201009] [INFO] Shutting down: Master
+[2021-07-30 08:47:05 +0000] [831] [INFO] Starting gunicorn 20.1.0
+[2021-07-30 08:47:05 +0000] [831] [INFO] Listening at: http://127.0.0.1:8000 (831)
+[2021-07-30 08:47:05 +0000] [831] [INFO] Using worker: sync
+[2021-07-30 08:47:05 +0000] [962] [INFO] Booting worker with pid: 962
+[2021-07-30 10:40:11 +0000] [831] [INFO] Handling signal: term
+[2021-07-30 12:40:11 +0200] [962] [INFO] Worker exiting (pid: 962)
+[2021-07-30 10:40:11 +0000] [831] [INFO] Shutting down: Master
+[2021-07-30 10:40:11 +0000] [1951] [INFO] Starting gunicorn 20.1.0
+[2021-07-30 10:40:11 +0000] [1951] [INFO] Listening at: http://127.0.0.1:8000 (1951)
+[2021-07-30 10:40:11 +0000] [1951] [INFO] Using worker: sync
+[2021-07-30 10:40:11 +0000] [1953] [INFO] Booting worker with pid: 1953
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/ttsering/P10_deployment/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ttsering/P10_deployment/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ttsering/P10_deployment/users/views.py", line 19, in index
+    return render(request, 'purbeurre/index.html')
+  File "/home/ttsering/P10_deployment/env/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/ttsering/P10_deployment/env/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/ttsering/P10_deployment/env/lib/python3.8/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: purbeurre/index.html
+[2021-07-30 10:48:19 +0000] [1951] [INFO] Handling signal: term
+[2021-07-30 12:48:19 +0200] [1953] [INFO] Worker exiting (pid: 1953)
+[2021-07-30 10:48:19 +0000] [1951] [INFO] Shutting down: Master
+[2021-07-30 10:48:20 +0000] [2018] [INFO] Starting gunicorn 20.1.0
+[2021-07-30 10:48:20 +0000] [2018] [INFO] Listening at: http://127.0.0.1:8000 (2018)
+[2021-07-30 10:48:20 +0000] [2018] [INFO] Using worker: sync
+[2021-07-30 10:48:20 +0000] [2020] [INFO] Booting worker with pid: 2020
+[2021-07-30 10:51:29 +0000] [2018] [INFO] Handling signal: term
+[2021-07-30 12:51:29 +0200] [2020] [INFO] Worker exiting (pid: 2020)
+[2021-07-30 10:51:30 +0000] [2018] [INFO] Shutting down: Master
+[2021-07-30 10:51:30 +0000] [2043] [INFO] Starting gunicorn 20.1.0
+[2021-07-30 10:51:30 +0000] [2043] [INFO] Listening at: http://127.0.0.1:8000 (2043)
+[2021-07-30 10:51:30 +0000] [2043] [INFO] Using worker: sync
+[2021-07-30 10:51:30 +0000] [2045] [INFO] Booting worker with pid: 2045
+Not Found: /.env
+Forbidden (CSRF cookie not set.): /
+Not Found: /.env
+Forbidden (CSRF cookie not set.): /
+Not Found: /purbeurre/search/purbeurre/404.html
+Not Found: /purbeurre/search/purbeurre/404.html
+Not Found: /purbeurre/search/purbeurre/404.html
+[2021-07-30 13:30:14 +0000] [2043] [INFO] Handling signal: term
+[2021-07-30 15:30:14 +0200] [2045] [INFO] Worker exiting (pid: 2045)
+[2021-07-30 13:30:15 +0000] [2043] [INFO] Shutting down: Master
+[2021-07-30 13:30:15 +0000] [2777] [INFO] Starting gunicorn 20.1.0
+[2021-07-30 13:30:15 +0000] [2777] [INFO] Listening at: http://127.0.0.1:8000 (2777)
+[2021-07-30 13:30:15 +0000] [2777] [INFO] Using worker: sync
+[2021-07-30 13:30:15 +0000] [2779] [INFO] Booting worker with pid: 2779
