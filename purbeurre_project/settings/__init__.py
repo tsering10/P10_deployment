@@ -14,6 +14,16 @@ from pathlib import Path
 import os
 import dj_database_url
 import warnings
+from dotenv import load_dotenv
+## using existing module to specify location of the .env file
+from pathlib import Path
+import os
+ 
+load_dotenv()
+env_path = Path('.')/'.env'
+load_dotenv(dotenv_path=env_path)
+
+
 warnings.filterwarnings("ignore", message="No directory at", module="whitenoise.base" )
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -24,7 +34,7 @@ BASE_DIR = '/home/ttsering/P10_deployment/'
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "=SjyH\\j^l]hwQGG'3Ig_%GyE"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 
 DEBUG = True
@@ -81,11 +91,11 @@ WSGI_APPLICATION = 'purbeurre_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'openfoodfacts',
-        'USER': 'ttsering',  # attention : remplacez par votre nom d'utilisateur !!
-        'PASSWORD': 'tashisonam',
+        'NAME': os.getenv("NAME"),
+        'USER': os.getenv('USER'),  # attention : remplacez par votre nom d'utilisateur !!
+        'PASSWORD': os.getenv("PASSWORD"),
         'HOST': '',
-        'PORT': '5432',
+        'PORT': os.getenv("PORT"),
     }
 }
 
