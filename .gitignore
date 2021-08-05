@@ -25,3 +25,4 @@ purbeurre_project/staticfiles/
 log/
 *.log
 .env
+webdrivers/

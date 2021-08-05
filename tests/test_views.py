@@ -11,6 +11,10 @@ from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.firefox.webdriver import WebDriver
 
+# firefox_options = webdriver.FirefoxOptions()
+# firefox_options.headless = True
+
+
 
 class IndexPageTestCase(TestCase):
 
@@ -300,8 +304,13 @@ class SearchPageTestCase(TestCase):
 #     @classmethod
 #     def setUpClass(cls):
 #         super().setUpClass()
-#         cls.selenium = WebDriver(executable_path="/home/tashitsering/Documents/my staff/openclassrooms/P10/tests/geckodriver")
+#         # cls.selenium  = webdriver.Firefox(
+#         #     executable_path="/home/ttsering/P10_deployment/webdrivers/geckodriver",
+#         #     options=firefox_options,
+#         # )
+#         cls.selenium = WebDriver(executable_path="/home/ttsering/P10_deployment/webdrivers/geckodriver")
 #         cls.selenium.implicitly_wait(10)
+#         # cls.selenium.maximize_window()
 
 #     @classmethod
 #     def tearDownClass(cls):
@@ -333,9 +342,9 @@ class SearchPageTestCase(TestCase):
 # class ProductSearchTest(LiveServerTestCase):
 #     def testform(self):
 #         selenium = webdriver.Firefox(
-#             executable_path="/home/tashitsering/Documents/my staff/openclassrooms/P8/P8_v2/tests/geckodriver")
+#             executable_path="/home/ttsering/P10_deployment/webdrivers/geckodriver")
 #         # Choose your url to visit
-#         selenium.get('http://127.0.0.1:8000/')
+#         selenium.get('http://http://143.244.154.132/')
 #         # find the elements you need to submit form
 #         search_product = selenium.find_element_by_id('input_product')
 #         submit = selenium.find_element_by_id('submit_button')
