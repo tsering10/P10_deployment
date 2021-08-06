@@ -11,9 +11,6 @@ from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.firefox.webdriver import WebDriver
 
-# firefox_options = webdriver.FirefoxOptions()
-# firefox_options.headless = True
-
 
 
 class IndexPageTestCase(TestCase):
