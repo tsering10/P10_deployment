@@ -1,6 +1,7 @@
 from . import *
 
 SECRET_KEY = "travis_secret_key"
+print(BASE_DIR)
 
 DATABASES = {
     'default': {
