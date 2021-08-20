@@ -17,7 +17,8 @@ import warnings
 from dotenv import load_dotenv
 ## using existing module to specify location of the .env file
 from pathlib import Path
-import os
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
  
 load_dotenv()
 env_path = Path('.')/'.env'
@@ -27,8 +28,8 @@ load_dotenv(dotenv_path=env_path)
 warnings.filterwarnings("ignore", message="No directory at", module="whitenoise.base" )
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# BASE_DIR = '/home/ttsering/P10_deployment/'
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = '/home/ttsering/P10_deployment/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -149,4 +150,16 @@ LOGIN_URL = '/users/login'
 LOGOUT_REDIRECT_URL = '/'
 
 
+sentry_sdk.init(
+    dsn=os.getenv("dsn"),
+    integrations=[DjangoIntegration()],
 
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production.
+    traces_sample_rate=1.0,
+
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)
