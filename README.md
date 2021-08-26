@@ -264,6 +264,61 @@ server {
 
 }
 ```
+### Enable the file by linking to the sites-enabled dir
+
+```
+# sudo ln -s /etc/nginx/sites-available/your_project /etc/nginx/sites-enabled
+```
+### Test NGINX config
+
+```
+# sudo nginx -t
+```
+
+### Restart NGINX
+
+```
+# sudo systemctl restart nginx
+```
+
+# Gunicorn and Supervisor Setup
+
+Install gunicorn and supervisor 
+
+```
+# pip install gunicorn
+
+# sudo apt-get install supervisor
+```
+
+### Test Gunicorn serve
+
+```
+# gunicorn your_project.wsgi:application
+```
+Just like Nginx, Supervisor reads a configuration file located in  etc/supervisor. Each file ending in  .conf and located in the path  /etc/supervisor/conf.d represents a process that is monitored by Supervisor. Create a new one:
+```
+sudo vi /etc/supervisor/conf.d/your_project-gunicorn.conf
+```
+### Copy this code and past into the file your_project_gunicorn.conf
+
+```
+[program:your_project-gunicorn.conf]
+command = /home/your_user/env/bin/gunicorn your_project-gunicorn.conf.wsgi:application
+user = your_user
+directory = /home/your_user/your_project
+environment = ENV="PRODUCTION",SECRET_KEY="your_screct_key"
+autostart = true
+autorestart = true
+```
+###  Supervisor commands to start the processes
+```
+# sudo supervisorctl reread
+# sudo supervisorctl update
+# sudo supervisorctl status
+```
+
+
 
 ## Acknowledgment
 I would like to thank my mentor Dimitri Ségard, for all the help and advices he gave to me to accomplish this project.
