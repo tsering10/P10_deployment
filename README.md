@@ -137,5 +137,74 @@ PasswordAuthentication no
 # git clone yourdepot.git
 ```
 
+# Vitrual Environment
+
+You need to install the python3-venv package
+
+```
+# sudo apt install python3-venv
+```
+
+### Create project directory
+
+```
+# mkdir yourapp
+# cd yourapp
+```
+
+### Create venv
+
+```
+# python3 -m venv ./venv
+```
+
+### Activate the environment
+
+```
+# source venv/bin/activate
+```
+# Postgres Database & User Setup
+
+Log in as administrator to the PostgreSQL console by typing the command 
+
+```
+# sudo -u postgres psql
+```
+
+You should now be logged into the pg shell
+
+### Create a database
+
+```
+CREATE DATABASE db_name;
+```
+
+### Create user
+
+```
+CREATE USER db_user WITH PASSWORD db_password;
+```
+
+### Set default encoding, tansaction isolation scheme (Recommended from Django)
+
+```
+ALTER ROLE db_user SET client_encoding TO 'utf8';
+ALTER ROLE db_user SET default_transaction_isolation TO 'read committed';
+ALTER ROLE db_user SET timezone TO 'UTC';
+```
+
+### Give User access to database
+
+```
+GRANT ALL PRIVILEGES ON DATABASE db_name TO db_user;
+```
+
+### Quit out of Postgres
+
+```
+\q
+```
+
+
 ## Acknowledgment
 I would like to thank my mentor Dimitri Ségard, for all the help and advices he gave to me to accomplish this project.
