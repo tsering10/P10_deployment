@@ -117,7 +117,25 @@ PasswordAuthentication no
 # sudo systemctl reload sshd
 ```
 
+## Software
 
+## Update packages
+
+```
+# sudo apt update
+# sudo apt upgrade
+```
+
+## Install Python 3, Postgres & NGINX
+
+```
+# sudo apt install python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx curl
+```
+
+## Clone the project into the app folder on your server (Either HTTPS or setup SSH keys)
+```
+# git clone yourdepot.git
+```
 
 ## Acknowledgment
 I would like to thank my mentor Dimitri Ségard, for all the help and advices he gave to me to accomplish this project.
