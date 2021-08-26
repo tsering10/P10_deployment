@@ -51,7 +51,7 @@ It will ask for a password, use something secure. You can just hit enter through
 ### Give root privileges
 
 ```
-# usermod -aG sudo your_user_name
+# usermod -aG sudo djangoadmin
 ```
 
 ### SSH keys for the new user
