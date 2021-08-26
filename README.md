@@ -205,6 +205,65 @@ GRANT ALL PRIVILEGES ON DATABASE db_name TO db_user;
 \q
 ```
 
+## Create static files
+
+```
+python manage.py collectstatic
+```
+## Migrations
+
+```
+# python manage.py makemigrations
+# python manage.py migrate
+```
+you can load the data from your dump file as well
+
+```
+# python manage.py loaddata path_to_the_dump_file
+```
+
+## Create super user
+
+```
+# python manage.py createsuperuser
+```
+# NGINX Setup
+
+install NGINX
+```
+# sudo apt-get install nginx
+```
+
+### Create project folder
+
+```
+# sudo nano /etc/nginx/sites-available/your_project
+```
+### Copy this code and paste into the file
+
+```
+server {
+
+    listen 80;
+    server_name YOUR_IP_ADDRESS;;
+    root PATH_TO_ROOT;
+
+    location /static {
+        alias PATH_TO_STATICFILES ;
+    }
+
+    location / {
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_redirect off;
+        if (!-f $request_filename) {
+            proxy_pass http://127.0.0.1:8000;
+            break;
+        }
+    }
+
+}
+```
 
 ## Acknowledgment
 I would like to thank my mentor Dimitri Ségard, for all the help and advices he gave to me to accomplish this project.
