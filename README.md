@@ -1,7 +1,7 @@
 
 ## Objective
 
-The aim of this project is to deploy the Django Pur Beurre app on server
+The aim of this project is to deploy  Django Pur Beurre app on server
 
 ## Create A Digital Ocean Droplet
 
